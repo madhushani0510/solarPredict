@@ -4,9 +4,16 @@
 
 <form method="post">
 
-    <input name="year" placeholder="Year"/>
-    <input name="month" placeholder="Month"/>
-    <input name="day" placeholder="Day"/>
+	<h1>Solar Energy Prediction</h1>
+    <table>
+    <label>Year                              </label>
+    <input name="year" placeholder="Year"/>	<br>
+    
+    <label>Month                              </label>
+    <input name="month" placeholder="Month"/><br>
+    
+    <label>Day                              </label>
+    <input name="day" placeholder="Day"/><br><br><br><br>
 
 
     <input name="first_hour" placeholder="First Hour of the Period"/>
@@ -21,9 +28,10 @@
     <input name="avg_windSpeed_period" placeholder="Average Wind Speed for Period"/>
     <input name="avg_pressure" placeholder="Average Pressure"/>
 
-    <h3>POWER Generated   := {{  power_generated  }}</h3>
+    </table>
+    <h3>Power Generated    {{  power_generated  }}  W</h3>
     
-    <button>Save</button>
+    <button>Submit</button>
 
 </form>
 </html>

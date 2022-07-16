@@ -8,25 +8,6 @@ import pandas as pd
 
 application = Flask(__name__)
 
-#dataset=pd.read_csv('Solar_dataset.csv')
-#data = dataset.sample(frac=0.9, random_state=786)
-#data_unseen = dataset.drop(data.index)
-
-#colum_list = data_unseen.columns
-#print(colum_list)
-
-#print("DEBUG PRINT.....")
-#print(type(data_unseen))
-
-
-#colum_list = ["Day of Year","Year","Month","Day","First Hour of Period","Is Daylight","Distance to Solar Noon","Average Temperature (Day)","Average Wind Direction (Day)","Average Wind Speed (Day)","Sky Cover","Visibility","Relative Humidity","Average Wind Speed (Period)","Average Barometric Pressure (Period)"]
-#print(type(colum_list))
-#data_unseen=[245,2008,9,1,16,True,0.296915,69,28,7.5,0,10.0,20,23.0,29.85]
-#df = pd.DataFrame (data_unseen, colum_list)
-
-#print("dataFrame created")
-
-#print(df)
 
 cols =  ['Day of Year','Year','Month','Day','First Hour of Period','Is Daylight','Distance to Solar Noon','Average Temperature (Day)','Average Wind Direction (Day)','Average Wind Speed (Day)','Sky Cover','Visibility','Relative Humidity','Average Wind Speed (Period)','Average Barometric Pressure (Period)']
 
@@ -130,7 +111,7 @@ def powerRediction():
         #new_prediction[new_prediction < 0] = 0
         
         print(new_prediction.iloc[0,15])
-        predict = new_prediction.iloc[0,15]
+        predict = new_prediction.iloc[0,15].round(2)
         print("Power Generated   : ",predict)
 
     return render_template("index.html",power_generated=predict)
